@@ -5,13 +5,16 @@ import utils.SinglyLinkedList
 
 class CheckLinkedListIntersection {
 
+    /**
+     * I decided to use "companion object" to facilitate code testing.
+     * */
     companion object {
 
         /**
          * This function was built assuming that one list could have more elements after the intersection.
          *
          * Example:
-         * A: -87 -> "21" -> "7" -> -787
+         * A: 55 -> -3 -> 31 -> -87 -> "21" -> "7" -> -787 -> 42
          * B: 10 -> 100 -> "21" -> "7"
          *
          * Where the numbers between double quotes are those that are in the intersection.

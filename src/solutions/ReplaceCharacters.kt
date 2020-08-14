@@ -2,6 +2,9 @@ package solutions
 
 class ReplaceCharacters {
 
+    /**
+     * I decided to use "companion object" to facilitate code testing.
+     * */
     companion object {
 
         fun replaceInPlace(str: Array<Char>, trueStrLength: Int): Array<Char> {

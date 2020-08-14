@@ -2,8 +2,15 @@ package solutions
 
 class CheckTypo {
 
+    /**
+     * I decided to use "companion object" to facilitate code testing.
+     * */
     companion object {
 
+        /**
+         * This solution assumes that the strings provided will be in lower case.
+         * Therefore, no case-sensitive checks have been implemented.
+         * */
         fun isZeroOrOneTypo(stringA: String, stringB: String): Boolean {
             if (stringA.length > stringB.length) {
                 return checkTypoBy(stringA, stringB)
@@ -38,7 +45,7 @@ class CheckTypo {
                 /**
                  * When the displaced character is found, then it can only occur once.
                  * */
-                if (biggerStr[indexBigger].toLowerCase() != smallerStr[indexSmaller].toLowerCase()) {
+                if (biggerStr[indexBigger] != smallerStr[indexSmaller]) {
 
                     if (foundAway) {
                         return false
@@ -59,6 +66,9 @@ class CheckTypo {
             return true
         }
 
+        /**
+         * Used when the strings are the same length.
+         * */
         private fun wereStringsEditedAtMostOneLetter(strA: String, strB: String): Boolean {
             if(strA.length != strB.length) {
                 return false
@@ -67,7 +77,7 @@ class CheckTypo {
             var oneAway = false
 
             for(i in strA.indices) {
-                if(strA[i].toLowerCase() != strB[i].toLowerCase()) {
+                if(strA[i] != strB[i]) {
                     if(oneAway) {
                         return false
                     }

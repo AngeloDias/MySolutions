@@ -17,8 +17,10 @@ class CheckTypoTest {
         assertTrue(CheckTypo.isZeroOrOneTypo("pale", "ple"))
         assertTrue(CheckTypo.isZeroOrOneTypo("pale", "pales"))
         assertTrue(CheckTypo.isZeroOrOneTypo("pales", "pales"))
+        assertTrue(CheckTypo.isZeroOrOneTypo("pales", "palas"))
         assertTrue(CheckTypo.isZeroOrOneTypo("p", "p"))
         assertTrue(CheckTypo.isZeroOrOneTypo("p", "a"))
+        assertTrue(CheckTypo.isZeroOrOneTypo("", ""))
 
         assertFalse(CheckTypo.isZeroOrOneTypo("pales", "bakes"))
         assertFalse(CheckTypo.isZeroOrOneTypo("pake", "bales"))

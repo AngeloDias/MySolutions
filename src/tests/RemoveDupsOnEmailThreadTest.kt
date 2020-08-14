@@ -20,7 +20,7 @@ class RemoveDupsOnEmailThreadTest {
     }
 
     @Test
-    fun removeDupsUsingHashTableTest() {
+    fun removeDupsUsingHashMapTest() {
         expectedList.add("AAA")
         expectedList.add("BBB")
         expectedList.add("CCC")
@@ -36,7 +36,7 @@ class RemoveDupsOnEmailThreadTest {
 
         assertArrayEquals(
                 expectedList.toTypedArray(),
-                RemoveDupsOnEmailThread.removeDupsUsingHashTable(emailList).toTypedArray()
+                RemoveDupsOnEmailThread.removeDupsUsingHashMap(emailList).toTypedArray()
         )
 
         expectedList.clear()
@@ -49,7 +49,7 @@ class RemoveDupsOnEmailThreadTest {
 
         assertArrayEquals(
                 expectedList.toTypedArray(),
-                RemoveDupsOnEmailThread.removeDupsUsingHashTable(emailList).toTypedArray()
+                RemoveDupsOnEmailThread.removeDupsUsingHashMap(emailList).toTypedArray()
         )
 
     }
@@ -96,6 +96,24 @@ class RemoveDupsOnEmailThreadTest {
 
         emailList.add("BBB")
         emailList.add("BBB")
+
+        assertArrayEquals(
+                expectedList.toTypedArray(),
+                RemoveDupsOnEmailThread.removeDupsUsingPointers(emailList).toTypedArray()
+        )
+
+        expectedList.clear()
+        emailList.clear()
+
+        expectedList.add("AAA")
+        expectedList.add("BBB")
+        expectedList.add("CCC")
+        expectedList.add("DDD")
+        expectedList.add("87444")
+        expectedList.add("022")
+
+        emailList.addAll(expectedList)
+        emailList.addAll(expectedList)
 
         assertArrayEquals(
                 expectedList.toTypedArray(),

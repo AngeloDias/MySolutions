@@ -1,14 +1,15 @@
 package solutions
 
 import utils.SinglyLinkedList
-import java.util.*
-import kotlin.collections.HashMap
 
 class RemoveDupsOnEmailThread {
 
+    /**
+     * I decided to use "companion object" to facilitate code testing.
+     * */
     companion object {
 
-        fun removeDupsUsingHashTable(unsortedList: SinglyLinkedList<String>): SinglyLinkedList<String> {
+        fun removeDupsUsingHashMap(unsortedList: SinglyLinkedList<String>): SinglyLinkedList<String> {
             val mapMemory = HashMap<String, String>()
             val dupsRemoved = SinglyLinkedList<String>(0)
 
@@ -23,14 +24,13 @@ class RemoveDupsOnEmailThread {
         }
 
         fun removeDupsUsingPointers(linkedList: SinglyLinkedList<String>): SinglyLinkedList<String> {
-            val iterator = linkedList.iterator()
             var current = linkedList.head
 
-            while(iterator.hasNext()) {
+            while(current != null) {
                 var runner = current
 
                 while (runner!!.next != null) {
-                    if(current!!.value == runner.next!!.value) {
+                    if(current.value == runner.next!!.value) {
 
                         runner.next = runner.next!!.next
                     } else {
@@ -39,9 +39,7 @@ class RemoveDupsOnEmailThread {
 
                 }
 
-                current = current!!.next
-
-                iterator.next()
+                current = current.next
             }
 
             return linkedList

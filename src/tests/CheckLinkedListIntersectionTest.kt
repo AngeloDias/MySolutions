@@ -62,6 +62,7 @@ class CheckLinkedListIntersectionTest {
         listA.addNode(intersectingNode)
         listA.addNode(secondNode)
         listA.add(-787)
+        listA.add(-157)
 
         listB.add(10)
         listB.add(100)
